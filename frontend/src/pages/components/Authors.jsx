@@ -41,6 +41,7 @@ const Authors = () => {
 
             {authors.map((author) => (
               <li
+                key={author.id}
                 onClick={() => navigate(`/authors/${author.id}`)}
                 className="list-group-item d-flex justify-content-between align-items-center"
               >

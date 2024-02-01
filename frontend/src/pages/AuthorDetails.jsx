@@ -57,7 +57,7 @@ const AuthorDetails = () => {
                       ) : (
                         <>
                           <h5>Author Details</h5>
-                          <table class="table">
+                          <table className="table">
                             <tbody>
                               <tr>
                                 <td>Name</td>

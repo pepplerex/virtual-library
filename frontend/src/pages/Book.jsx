@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Loading from "./components/Loading";
 
 const Book = () => {
@@ -53,7 +53,7 @@ const Book = () => {
                   <div className="card">
                     <div className="card-body">
                       <h5>Title</h5>
-                      <h3>{detail.title}</h3>
+                      <h3>{detail.name}</h3>
                       <div className="share-container">
                         <p>Share:</p>
                         <i className="fa-brands fa-instagram"></i>
@@ -68,7 +68,11 @@ const Book = () => {
                           </tr>
                           <tr>
                             <td>Author</td>
-                            <td>{detail.author}</td>
+                            <td>
+                              <Link to={`/authors/${detail.author_id}`}>
+                                About author
+                              </Link>
+                            </td>
                           </tr>
                         </tbody>
                       </table>
