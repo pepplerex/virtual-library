@@ -1,6 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Martian Mono', monospace;
+}
+
 :root {
   --default-color: #C19A6B;
 }
+
+
 
 .text-default {
   color: var(--default-color);
@@ -99,6 +117,7 @@ input::placeholder {
   padding: 5px;
   min-width: 120px;
   cursor: pointer;
+  font-family: 'Martian Mono', monospace
 }
 
 .nav-icons .icon-container:hover {
@@ -144,8 +163,12 @@ input::placeholder {
   text-align: start;
 }
 
+.hero-text .btn-default i {
+  font-size: 12px;
+}
+
 .hero-card h3 {
-  color: #0006b1;
+  /* color: light; */
   font-size: 35px;
 }
 
@@ -183,7 +206,7 @@ input::placeholder {
 }
 
 .book-card h3 {
-  font-size: 20px;
+  font-size: 15px;
   margin: 12px 0 5px 0;
 }
 

@@ -16,7 +16,8 @@ const HeroCard = () => {
               className="btn btn-default"
               onClick={() => navigate("/authors")}
             >
-              See all Authors <i className="fa-solid fa-arrow-right"></i>
+              See all Authors{" "}
+              <i className="fa-solid text-sm fa-arrow-right"></i>
             </div>
           </div>
         </div>
