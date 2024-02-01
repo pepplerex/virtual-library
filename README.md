@@ -3,7 +3,7 @@
 - A simple book library written in React js on the frntend and PHP Laravel on the backend
 - The project is optimized for large screen as there was no specific request to design for smaller screens
 - Beautiful form modals, user notifcation alerts
-- Elegant UI
+- Elegant UI built from scratch specifically for this purpose
 
   ![b1](https://github.com/pepplerex/virtual-library/assets/107540519/0cf06756-be10-4ad3-a459-4a707c7bb591)
 
@@ -17,7 +17,7 @@
  
     ![client running](https://github.com/pepplerex/virtual-library/assets/107540519/a959388f-33a1-452d-8f22-0c9bf2a9fcd6)
  
-    # Getting strated(backend)
+    # Getting started(backend)
     - once you have the project in your machine
     - from the root folder, cd into server
     - before anything, ensure you have php and mysql on your machine and running
