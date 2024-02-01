@@ -11,7 +11,8 @@
 
   - Clone this repo to your machine
   - cd into frontend
-  - in you terminal, run npm run dev
+  - in your terminal, run npm i. This will install all the necessary packages for our application to run
+  - after installation, run npm run dev
   - Application will start and run on --port 3000
   - acess with http://localhost:3000
  
@@ -20,8 +21,9 @@
     # Getting started(backend)
     - once you have the project in your machine
     - from the root folder, cd into server
-    - before anything, ensure you have php and mysql on your machine and running
-    - open your terminal and run php artisan migrate --seed
+    - before anything, ensure you have php and mysql and composer on your machine and running
+    - Open your terminal and run composer install. This will install the necessary packages to start the server
+    - after installation, run php artisan migrate --seed
     - I have created some mock dataset for the authors and books to populate your database for testing
     - after migration, in your terminal run php artisan serve
     - server will start and run on port --port 8000
