@@ -11,13 +11,13 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
-    public function getauthors()
+    public function index()
     {
         $authors = Author::orderBy('id', 'desc')->get();
         return response()->json($authors);
     }
 
-    public function read(Request $req)
+    public function show(Request $req)
     {
         $authors = Author::find($req->id);
         return response()->json($authors);
@@ -34,5 +34,26 @@ class Controller extends BaseController
         ]);
         Author::create($data);
         return response()->json('success', 204);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required',
+            'gender' => 'required',
+            'age' => 'required|integer',
+            'country' => 'required',
+            'genre' => 'required',
+        ]);
+
+        $author = Author::find($id);
+
+        if (!$author) {
+            return response()->json(['error' => 'Author not found'], 404);
+        }
+
+        $author->update($request->all());
+
+        return response()->json($author);
     }
 }

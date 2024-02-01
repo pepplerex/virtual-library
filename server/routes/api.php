@@ -16,14 +16,22 @@ use App\Http\Controllers\Controller;
 |
 */
 
-Route::get('/books', [BookController::class, 'all']);
+// Books route
 
-Route::get('/book/{id}', [BookController::class, 'read']);
+Route::get('/books', [BookController::class, 'index']);
+
+Route::get('/book/{id}', [BookController::class, 'show']);
 
 Route::post('/book', [BookController::class, 'create']);
 
-Route::get('/authors', [Controller::class, 'getauthors']);
+Route::put('/books/{id}', [BookController::class, 'update']);
 
-Route::get('/author/{id}', [Controller::class, 'read']);
+// Auhtor routes 
+
+Route::get('/authors', [Controller::class, 'index']);
+
+Route::get('/author/{id}', [Controller::class, 'show']);
 
 Route::post('/author', [Controller::class, 'create']);
+
+Route::put('/authors/{id}', [Controller::class, 'update']);
