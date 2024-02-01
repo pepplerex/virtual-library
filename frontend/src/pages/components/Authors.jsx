@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Loading from "./Loading";
 
 const Authors = () => {
   const navigate = useNavigate();
+
+  const [isloading, setisloading] = useState(true);
+
+  const [authors, setauthors] = useState([]);
+
+  const api = import.meta.env.VITE_ENDPOINT;
+
+  useEffect(() => {
+    const fetchauthors = async () => {
+      const res = await fetch(`${api}/api/authors`);
+      const data = await res.json();
+      setauthors(data);
+      setisloading(false);
+      return;
+    };
+    fetchauthors();
+  }, []);
 
   return (
     <div className="book-container">
@@ -13,39 +31,33 @@ const Authors = () => {
             <span>Home</span>
           </div>
         </div>
-        <ul className="list-group authors-list mt-5">
-          <h6>
-            Authors <i className="fa-solid fa-award"></i>
-          </h6>
+        {isloading ? (
+          <Loading />
+        ) : (
+          <ul className="list-group authors-list mt-5">
+            <h6>
+              Authors <i className="fa-solid fa-award"></i>
+            </h6>
 
-          <li
-            onClick={() => navigate(`/authors/1`)}
-            className="list-group-item d-flex justify-content-between align-items-center"
-          >
-            <div>
-              <img
-                src="https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-Image.png"
-                alt=""
-              />
-              A list item
-            </div>
-            <span>
-              <i className="fa-solid fa-chevron-right"></i>
-            </span>
-          </li>
-          <li className="list-group-item d-flex justify-content-between align-items-center">
-            A second list item
-            <span>
-              <i className="fa-solid fa-chevron-right"></i>
-            </span>
-          </li>
-          <li className="list-group-item d-flex justify-content-between align-items-center">
-            A third list item
-            <span>
-              <i className="fa-solid fa-chevron-right"></i>
-            </span>
-          </li>
-        </ul>
+            {authors.map((author) => (
+              <li
+                onClick={() => navigate(`/authors/${author.id}`)}
+                className="list-group-item d-flex justify-content-between align-items-center"
+              >
+                <div>
+                  <img
+                    src="https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-Image.png"
+                    alt=""
+                  />
+                  {author.name}
+                </div>
+                <span>
+                  <i className="fa-solid fa-chevron-right"></i>
+                </span>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );

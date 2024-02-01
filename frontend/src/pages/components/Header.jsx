@@ -20,11 +20,19 @@ const Header = () => {
           </div>
         </div>
         <div className="nav-icons">
-          <div className="icon-container">
+          <div
+            className="icon-container"
+            data-bs-toggle="modal"
+            data-bs-target="#addBookModal"
+          >
             <span>Add book</span>
             <i className="fa-solid fa-plus add-book-icon"></i>
           </div>
-          <div className="icon-container">
+          <div
+            className="icon-container"
+            data-bs-toggle="modal"
+            data-bs-target="#addAuthorModal"
+          >
             <span>Add author</span>
             <i className="fa-solid fa-user add-book-icon"></i>
           </div>
